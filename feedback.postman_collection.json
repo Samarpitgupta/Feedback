@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "e58b38ae-bec8-4614-97b3-9dc746ab8c00",
+		"name": "Feedback Module",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9000/feedback/createNewTemplate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"Retro template\",\n\"questions\":\"What went well; What did not go well;What can be improved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/createNewTemplate",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"createNewTemplate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/updateTemplate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1,\n\"name\":\"Retro template\",\n\"questions\":\"What went well; What did not go well;What can be improved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/updateTemplate",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"updateTemplate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/getAllTemplate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/feedback/getAllTemplate",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"getAllTemplate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/getTemplateById/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/feedback/getTemplateById/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"getTemplateById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/userFeedbackRequestToPatron",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"question\":\"I would like to know my performance during Lockdown days.\",\n\"typeId\":1,\n\"receiverId\":1,\n\"patronId\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/userFeedbackRequestToPatron",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"userFeedbackRequestToPatron"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/userFeedbackRequestToMultiplePatron",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"question\":\"I would like to know my performance for this week.\",\n\"typeId\":1,\n\"receiverId\":1,\n\"patronList\":[2,3,4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/userFeedbackRequestToMultiplePatron",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"userFeedbackRequestToMultiplePatron"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/saveResponse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"receiverId\":1,\n\"patronId\":2,\n\"templateQuestionId\":4,\n\"responseMessage\":\"performance was pretty good.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/saveResponse",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"saveResponse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/getAllQuestionAndResponses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"receiverId\":1,\n\"patronId\":4\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/getAllQuestionAndResponses",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"getAllQuestionAndResponses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/feedback/saveAllTemplateQuestionResponse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"patronId\":2,\n\t\"receiverId\":1,\n\t\"questionAndResponseList\":[\n\t\t{\n\t\t\t\"templateQuestionId\":1,\n\t\t\t\"responseMessage\":\"first question response\"\n\t\t},\n\t\t{\n\t\t\t\"templateQuestionId\":2,\n\t\t\t\"responseMessage\":\"second  question response\"\n\t\t},\n\t\t{\n\t\t\t\"templateQuestionId\":3,\n\t\t\t\"responseMessage\":\"third question response\"\n\t\t}\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/feedback/saveAllTemplateQuestionResponse",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"feedback",
+						"saveAllTemplateQuestionResponse"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
