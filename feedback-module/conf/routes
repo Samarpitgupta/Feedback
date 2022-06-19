@@ -1,0 +1,38 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+POST /feedback/createNewTemplate            			@controllers.FeedbackController.createNewTemplate()
+
+POST /feedback/updateTemplate            				@controllers.FeedbackController.updateTemplate()
+
+GET /feedback/getAllTemplate            				@controllers.FeedbackController.getAllTemplate()
+
+GET /feedback/getTemplateById/:id           			@controllers.FeedbackController.getTemplateById(id : Integer)
+
+POST /feedback/userFeedbackRequestToPatron     			@controllers.FeedbackController.userFeedbackRequestToPatron()
+
+POST /feedback/userFeedbackRequestToMultiplePatron     	@controllers.FeedbackController.userFeedbackRequestToMultiplePatron()
+
+POST /feedback/saveResponse								@controllers.FeedbackController.saveResponse()
+
+POST /feedback/getAllQuestionAndResponses				@controllers.FeedbackController.getAllQuestionAndResponses()
+
+POST /feedback/saveAllTemplateQuestionResponse			@controllers.FeedbackController.saveAllTemplateQuestionResponse()
+
+
+#POST /feedback/userRequestFeedbackToUnit            							@controllers.FeedbackController.userRequestFeedbackToUnit()
+
+#POST /feedback/userFeedbackRequestToPatron            							@controllers.FeedbackController.userFeedbackRequestToPatron()
+	
+#POST /feedback/saveTemplateQuestionResponse            						@controllers.FeedbackController.saveTemplateQuestionResponse()
+
+#GET /feedback/getReceivedResponseByFeedbackReceiverPatronMapId/:id             @controllers.FeedbackController.getReceivedResponseByFeedbackReceiverPatronMapId(id : Integer)
+
+#GET /feedback/getTemplateQuestionsResponsesByPatronId/:id            			@controllers.FeedbackController.getTemplateQuestionsResponsesByPatronId(id : Integer)
